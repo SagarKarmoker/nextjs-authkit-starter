@@ -13,9 +13,10 @@ export default authkitMiddleware({
 // Leave this out if you want authentication on every page in your application
 export const config = {
     matcher: [
-        "/", // home
-        "/dashboard/:path*", // your protected routes
+        "/",
+        "/dashboard/:path*",
         "/auth",
-        "/api/generate", // API routes that need auth
+        "/api/generate",
+        "/callback"
     ],
 };

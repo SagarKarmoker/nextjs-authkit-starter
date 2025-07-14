@@ -24,7 +24,7 @@ export default async function AuthPage() {
         <form
             action={async () => {
                 'use server';
-                await signOut();
+                await signOut({ returnTo: 'http://localhost:3000/auth' });
             }}
         >
             <p>Welcome back {user?.firstName && `, ${user?.firstName}`}</p>
