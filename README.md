@@ -9,13 +9,19 @@ This starter template comes in two versions to suit different database preferenc
 - **`main` branch**: MongoDB integration with Mongoose ODM
 - **`prisma` branch**: PostgreSQL integration with Prisma ORM
 
-> **Current Branch**: You are viewing the **Prisma/PostgreSQL** version
+---
+
+> **You are currently viewing the [`main` branch] — this is the MongoDB version.**
+>
+> For the Prisma/PostgreSQL version, switch to the [`prisma` branch].
+
+---
 
 ## 🚀 Features
 
 - **Next.js 13+ App Router**: Leverages the latest Next.js features for performance and scalability.
 - **Authentication Kit**: Modular authentication flow, ready for social and custom providers.
-- **PostgreSQL Integration**: User data stored securely with Prisma ORM.
+- **MongoDB Integration**: User data stored securely with Mongoose ODM.
 - **API Route Structure**: Organized API endpoints for authentication and webhooks.
 - **Dashboard Example**: Protected dashboard page for authenticated users.
 - **Reusable Components**: Includes a customizable Navbar and global styles.
@@ -31,8 +37,8 @@ nextjs-authkit-starter/
 │   ├── auth/           # Authentication pages and callbacks
 │   └── dashboard/      # Example protected dashboard
 ├── components/         # Reusable React components
-├── lib/                # Utility libraries (e.g., Prisma client)
-├── prisma/             # Prisma schema and migrations
+├── lib/                # Utility libraries (e.g., Mongoose connection)
+├── models/             # Mongoose models (User)
 ├── public/             # Static assets
 ├── middleware.ts       # Auth middleware
 ├── next.config.ts      # Next.js configuration
@@ -45,7 +51,7 @@ nextjs-authkit-starter/
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18+ recommended)
-- [PostgreSQL](https://www.postgresql.org/) database (local or cloud) - *for this Prisma version*
+- [MongoDB](https://www.mongodb.com/) instance (local or cloud) — *for this MongoDB version*
 
 ### Installation
 
@@ -61,8 +67,8 @@ nextjs-authkit-starter/
    ```
 
 3. **Configure environment variables:**
-   - Copy `.env.example` to `.env` and fill in your PostgreSQL DATABASE_URL and any authentication secrets.
-   - For MongoDB version, use MONGODB_URI instead of DATABASE_URL.
+   - Copy `.env.example` to `.env` and fill in your MongoDB `MONGODB_URI` and any authentication secrets.
+   - For Prisma/PostgreSQL version, use `DATABASE_URL` instead of `MONGODB_URI`.
 
 4. **Run the development server:**
    ```bash
@@ -73,13 +79,13 @@ nextjs-authkit-starter/
 ## 🔐 Authentication
 
 - Built-in authentication flow with extensible provider support.
-- User data is securely stored in PostgreSQL via Prisma ORM (this version).
+- User data is securely stored in MongoDB via Mongoose ODM (this version).
 - Example protected routes (e.g., `/dashboard`).
 
 ## 🧩 Customization
 
 - Add new authentication providers in `app/auth/`.
-- Extend the `User` model in `prisma/schema.prisma` (this version) or `models/User.model.ts` (MongoDB version).
+- Extend the `User` model in `models/User.model.ts` (this version) or `prisma/schema.prisma` (Prisma version).
 - Customize UI components in `components/`.
 
 ## 🧪 Scripts
