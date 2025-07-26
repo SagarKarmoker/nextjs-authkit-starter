@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
-import dbConnect from "@/lib/mongoose";
-import { User } from "@/models/User.model";
+import prisma from "@/lib/prisma";
 
 function secureCompare(a: string, b: string): boolean {
     return crypto.timingSafeEqual(Buffer.from(a), Buffer.from(b));
@@ -58,13 +57,13 @@ export async function POST(req: NextRequest) {
 
         console.log("✅ Webhook verified. User Created:", userData);
 
-        await dbConnect();
-
-        await User.create({
-            workosId: userData.id,
-            email: userData.email,
-            firstName: userData.first_name,
-            lastName: userData.last_name
+        await prisma.user.create({
+            data: {
+                workosId: userData.id,
+                email: userData.email,
+                firstName: userData.first_name,
+                lastName: userData.last_name
+            }
         });
 
         return NextResponse.json({ success: true });

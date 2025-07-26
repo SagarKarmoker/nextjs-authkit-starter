@@ -5,16 +5,22 @@ const prisma = new PrismaClient();
 async function main() {
   const usersData: Prisma.UserCreateInput[] = [
     {
+      workosId: "user_01h2x3y4z5",
       email: "alice@example.com",
-      password: "password123", // In production, use hashed passwords!
+      firstName: "Alice",
+      lastName: "Johnson",
     },
     {
+      workosId: "user_01h2x3y4z6",
       email: "bob@example.com",
-      password: "password456",
+      firstName: "Bob",
+      lastName: "Smith",
     },
     {
+      workosId: "user_01h2x3y4z7",
       email: "carol@example.com",
-      password: "password789",
+      firstName: "Carol",
+      lastName: "Davis",
     },
   ];
 
