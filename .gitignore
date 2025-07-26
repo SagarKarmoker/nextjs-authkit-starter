@@ -40,3 +40,44 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Prisma
+/prisma/dev.db
+/prisma/dev.db-journal
+/prisma/migrations/
+
+# VSCode
+.vscode/
+
+# logs
+logs
+*.log
+
+# OS
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# npm
+package-lock.json
+
+# Mac
+.AppleDouble
+.LSOverride
+
+# SASS
+.sass-cache
+
+# IDEs
+.idea/
+*.iml
+
+# local env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+/app/generated/
